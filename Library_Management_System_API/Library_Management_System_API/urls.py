@@ -20,6 +20,8 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # url for library api:
     path('library/', include('library.urls')),
+    # url for user api:
     path('users/', include('users.urls')),
 ]

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import BaseUserManager
 
+# Custom User Manager to handle user creation:
 class CustomUserManager(BaseUserManager):
     def create_user(self, username, email, password=None, **extra_fields):
         """
@@ -40,7 +41,7 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault("is_superuser", True)
         return self.create_user(username, password, **extra_fields)
 
-
+# Custom User Model:
 class CustomUser (AbstractUser):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)

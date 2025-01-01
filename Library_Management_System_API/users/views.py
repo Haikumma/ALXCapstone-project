@@ -10,9 +10,6 @@ from rest_framework.response import Response
 from rest_framework import status
 User = get_user_model()
 
-# Create your views here.
-
-
 class RegisterView(APIView):
     def post(self, request):
         """
@@ -104,7 +101,7 @@ class LogoutView(APIView):
             
 
 
-
+# API endpoint to retrieve, update, or delete a user
 class UserAPIView(RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()  
     serializer_class = UsersSerializer
